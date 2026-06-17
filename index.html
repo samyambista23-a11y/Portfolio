@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- ✏️ EDIT: Change the page title if desired -->
+
   <title>Samyam Bista — Portfolio</title>
   <meta name="description" content="Portfolio of Samyam Bista — Business Analytics, Marketing & Finance student at Augustana College." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,9 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* =============================================
-       RESET & BASE
-    ============================================= */
+    /* RESET & BASE */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -50,9 +48,7 @@
     ul { list-style: none; }
     button { cursor: none; }
 
-    /* =============================================
-       CUSTOM CURSOR
-    ============================================= */
+    /* CUSTOM CURSOR */
     #cursor-dot {
       position: fixed;
       width: 8px; height: 8px;
@@ -81,9 +77,7 @@
     body.cursor-hover #cursor-dot { width: 12px; height: 12px; background: var(--navy); }
     body.cursor-hover #cursor-ring { width: 52px; height: 52px; border-color: var(--gold); opacity: 0.4; }
 
-    /* =============================================
-       SCROLL PROGRESS BAR
-    ============================================= */
+    /* SCROLL PROGRESS BAR */
     #scroll-progress {
       position: fixed;
       top: 0; left: 0;
@@ -94,9 +88,7 @@
       transition: width 0.05s linear;
     }
 
-    /* =============================================
-       TYPOGRAPHY HELPERS
-    ============================================= */
+    /* TYPOGRAPHY HELPERS */
     .section-label {
       display: block;
       font-family: var(--ff-sans);
@@ -122,14 +114,10 @@
     .dark-section .section-title { color: #fff7ec; }
     .dark-section .section-title::after { background: var(--gold); }
 
-    /* =============================================
-       LAYOUT UTILITIES
-    ============================================= */
+    /* LAYOUT UTILITIES */
     .section-wrap { padding: 6rem 8%; max-width: var(--max-w); margin: 0 auto; }
 
-    /* =============================================
-       DIAGONAL SECTION CUTS
-    ============================================= */
+    /* DIAGONAL SECTION CUTS */
     #achievements {
       background: var(--navy);
       position: relative;
@@ -149,15 +137,11 @@
     #work { position: relative; z-index: 2; background: var(--bg); }
     #contact { position: relative; z-index: 2; background: var(--bg); }
 
-    /* =============================================
-       REVEAL ANIMATION
-    ============================================= */
+    /* REVEAL ANIMATION */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* =============================================
-       NAVBAR
-    ============================================= */
+    /* NAVBAR */
     #navbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       display: flex; align-items: center; justify-content: space-between;
@@ -169,7 +153,6 @@
 
     #navbar.scrolled { box-shadow: 0 2px 24px rgba(10,10,61,0.08); }
 
-    /* ✏️ EDIT: Logo initials */
     .nav-logo { font-family: var(--ff-serif); font-size: 1.4rem; font-weight: 700; color: var(--navy); letter-spacing: 0.02em; }
 
     .nav-links { display: flex; align-items: center; gap: 2rem; }
@@ -241,7 +224,6 @@
       text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold); margin-bottom: 1rem;
     }
 
-    /* ✏️ EDIT: Your name */
     .hero-name {
       font-family: var(--ff-serif); font-size: clamp(3rem, 6vw, 5.5rem);
       font-weight: 700; color: var(--navy); line-height: 1.05; margin-bottom: 1.25rem;
@@ -249,13 +231,11 @@
 
     .hero-name .line2 { display: block; }
 
-    /* ✏️ EDIT: Your tagline */
     .hero-tagline {
       font-family: var(--ff-serif); font-size: 1.1rem; font-style: italic;
       color: var(--muted); margin-bottom: 1.25rem;
     }
 
-    /* ✏️ EDIT: Bio paragraph */
     .hero-bio {
       font-family: var(--ff-sans); font-size: 0.97rem; color: var(--muted);
       line-height: 1.8; max-width: 520px; margin-bottom: 2.25rem;
@@ -290,7 +270,6 @@
       pointer-events: none; border-radius: 1px;
     }
 
-    /* ✏️ EDIT: Replace with your headshot photo, save as images/hero.jpg */
     .hero-photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     .photo-placeholder {
@@ -345,7 +324,6 @@
 
     .ach-photo-wrap { position: relative; height: 220px; overflow: hidden; }
 
-    /* ✏️ EDIT: Each achievement photo referenced as images/ach-*.jpg */
     .ach-photo-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.45s ease, filter 0.45s ease; }
     .ach-card:hover .ach-photo-wrap img { transform: scale(1.04); filter: brightness(1.08); }
 
@@ -380,7 +358,6 @@
 
     .work-card-photo { height: 200px; overflow: hidden; background: linear-gradient(135deg,#dce8ff,#d4f0e8); }
 
-    /* ✏️ EDIT: Work card photos referenced as images/work-*.jpg */
     .work-card-photo img { width: 100%; height: 100%; object-fit: cover; }
     .work-card-body { padding: 1.5rem; }
     .work-company { font-family: var(--ff-sans); font-size: 0.72rem; font-variant: small-caps; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 0.4rem; }
@@ -412,7 +389,6 @@
 
     .modal-header { position: relative; height: 260px; overflow: hidden; background: linear-gradient(135deg,#c9d8ff,#dce8ff); }
 
-    /* ✏️ EDIT: Modal header photos referenced as images/work-*-modal.jpg */
     .modal-header img { width: 100%; height: 100%; object-fit: cover; }
 
     .modal-header-overlay {
@@ -454,7 +430,6 @@
       border: 1px solid var(--border); overflow: hidden; flex-shrink: 0;
     }
 
-    /* ✏️ EDIT: Gallery images referenced as images/work-*-1.jpg etc. */
     .modal-gallery-img img { width: 100%; height: 100%; object-fit: cover; }
 
     .modal-link {
@@ -470,7 +445,7 @@
     .parallax-divider {
       position: relative;
       height: 480px;
-      /* ✏️ EDIT: Save your wide landscape photo as images/parallax.jpg */
+
       background-image: url('images/parallax.jpg');
       background-attachment: fixed;
       background-size: cover;
@@ -483,7 +458,7 @@
     .parallax-divider-1 {
       position: relative;
       height: 480px;
-      /* ✏️ EDIT: Save your wide landscape photo as images/parallax1.jpg */
+
       background-image: url('images/parallax1.jpg');
       background-attachment: fixed;
       background-size: cover;
@@ -500,7 +475,7 @@
       }
     }
 
-    /* Dark overlay so it doesn't overpower the page */
+
     .parallax-overlay {
       position: absolute;
       inset: 0;
@@ -545,7 +520,6 @@
 
     .proj-photo { height: 160px; overflow: hidden; background: linear-gradient(135deg,#e8deff,#d4f0e8); }
 
-    /* ✏️ EDIT: Project photos referenced as images/proj-*.jpg */
     .proj-photo img { width: 100%; height: 100%; object-fit: cover; }
 
     .proj-body { padding: 1.25rem; }
@@ -609,7 +583,6 @@
     ============================================= */
     footer { border-top: 1px solid var(--border); padding: 1.75rem 8%; text-align: center; }
 
-    /* ✏️ EDIT: Update year if needed */
     .footer-text { font-family: var(--ff-sans); font-size: 0.82rem; color: var(--muted); }
 
     /* =============================================
@@ -678,7 +651,7 @@
        NAVIGATION
   ============================================= -->
   <nav id="navbar" role="navigation" aria-label="Main navigation">
-    <!-- ✏️ EDIT: Logo initials -->
+    
     <a href="#about" class="nav-logo">SB</a>
 
     <ul class="nav-links" role="list">
@@ -721,26 +694,26 @@
       <div class="hero-text">
         <span class="hero-eyebrow">Portfolio</span>
 
-        <!-- ✏️ EDIT: Your name -->
+        
         <h1 class="hero-name">
           Samyam
           <span class="line2">Bista</span>
         </h1>
 
-        <!-- ✏️ EDIT: Your tagline -->
+       
         <p class="hero-tagline">"Turning ideas into outcomes."</p>
 
-        <!-- ✏️ EDIT: Bio paragraph -->
+     
         <p class="hero-bio">
           My name is Samyam, and I'm a senior at Augustana College triple majoring in Business Analytics, Marketing, and Finance, not because I couldn't choose, but because I believe the most interesting problems sit at the intersection of all three. I've spent the last few years turning that belief into real work, from internships and case competitions to building products from scratch.
         </p>
 
-        <a href="#work" class="btn btn-primary">See My Work</a>
+        <a href="resume.pdf" download class="btn btn-primary"> My Resume ↓</a>
       </div>
 
       <div class="hero-photo-col">
         <div class="hero-photo-frame">
-          <!-- ✏️ EDIT: Replace with your headshot photo, save as images/hero.jpg -->
+    
           <img src="images/hero.jpg" alt="Samyam Bista" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>Add images/hero.jpg</span></div>'" />
         </div>
       </div>
@@ -750,7 +723,7 @@
 <!-- =============================================
        PARALLAX DIVIDER 1 — between Hero and Education
   ============================================= -->
-  <!-- ✏️ EDIT: Save your wide landscape photo as images/parallax1.jpg -->
+  
   <div class="parallax-divider-1" aria-hidden="true">
     <div class="parallax-overlay"></div>
   </div>
@@ -765,36 +738,36 @@
 
       <div class="edu-card reveal" style="transition-delay:0.2s;">
         <div class="edu-left">
-          <!-- ✏️ EDIT: School name -->
+
           <p class="edu-school">Augustana College</p>
-          <!-- ✏️ EDIT: Your majors -->
+
           <p class="edu-degree">Business Analytics · Marketing · Finance</p>
 
           <div class="pill-row">
-            <!-- ✏️ EDIT: Your major/achievement pills -->
+
             <span class="pill">Dean's List</span>
             <span class="pill">Dahl Scholarship</span>
             <span class="pill">QCBT Intern</span>
             <span class="pill">ICT President</span>
           </div>
 
-          <!-- ✏️ EDIT: Relevant courses -->
+
           <p class="edu-coursework-label">Relevant Coursework</p>
           <p class="edu-coursework">Data Analysis · Market Strategy · Market Research · Stock Analysis</p>
 
-          <!-- ✏️ EDIT: Augustana College photo — save as images/education.jpg -->
+       
           <div class="edu-photo" style="background:linear-gradient(135deg,#dce8ff,#e8f0d4);">
             <img src="images/education.jpg" alt="Augustana College" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'" />
           </div>
         </div>
 
         <div class="edu-stats">
-          <!-- ✏️ EDIT: Your GPA -->
+
           <p class="edu-gpa">3.95</p>
           <p class="edu-gpa-label">Cumulative GPA</p>
-          <!-- ✏️ EDIT: Your enrollment dates -->
+
           <p class="edu-meta-line">Aug 2023 – May 2027</p>
-          <!-- ✏️ EDIT: Your school location -->
+
           <p class="edu-meta-line">Rock Island, IL</p>
         </div>
       </div>
@@ -812,10 +785,10 @@
 
       <div class="ach-grid">
 
-        <!-- ✏️ EDIT: Achievement Card 1 -->
+
         <div class="ach-card reveal" style="transition-delay:0.15s;" onclick="toggleAch(this)" role="button" tabindex="0" aria-expanded="false">
           <div class="ach-photo-wrap">
-            <!-- ✏️ EDIT: Your Business Plan Competition photo — save as images/ach-bizplan.jpg -->
+
             <img src="images/ach-bizplan.jpg" alt="Business Plan Competition" onerror="this.src='';this.parentElement.style.background='linear-gradient(135deg,#1a1a6e,#2a2a9e)'" />
             <div class="ach-photo-label">
               <p class="ach-name">1st Place — Business Plan Competition</p>
@@ -827,10 +800,10 @@
           </div>
         </div>
 
-        <!-- ✏️ EDIT: Achievement Card 2 -->
+
         <div class="ach-card reveal" style="transition-delay:0.25s;" onclick="toggleAch(this)" role="button" tabindex="0" aria-expanded="false">
           <div class="ach-photo-wrap">
-            <!-- ✏️ EDIT: Your Montgomery Scholarship certificate photo — save as images/ach-montgomery.jpg -->
+
             <img src="images/ach-montgomery.jpg" alt="Montgomery Scholarship" style="object-position: 50% 35%;" onerror="this.src='';this.parentElement.style.background='linear-gradient(135deg,#1a1a6e,#2a2a9e)'" />
             <div class="ach-photo-label">
               <p class="ach-name">Montgomery Scholarship</p>
@@ -842,10 +815,9 @@
           </div>
         </div>
 
-        <!-- ✏️ EDIT: Achievement Card 3 -->
         <div class="ach-card reveal" style="transition-delay:0.35s;" onclick="toggleAch(this)" role="button" tabindex="0" aria-expanded="false">
           <div class="ach-photo-wrap">
-            <!-- ✏️ EDIT: Your Dahl Scholarship photo — save as images/ach-dahl.jpg -->
+     
             <img src="images/ach-dahl.jpg" alt="Dahl's Leadership Scholarship" onerror="this.src='';this.parentElement.style.background='linear-gradient(135deg,#1a1a6e,#2a2a9e)'" />
             <div class="ach-photo-label">
               <p class="ach-name">Dahl's Leadership Scholarship</p>
@@ -857,10 +829,8 @@
           </div>
         </div>
 
-        <!-- ✏️ EDIT: Achievement Card 4 -->
         <div class="ach-card reveal" style="transition-delay:0.45s;" onclick="toggleAch(this)" role="button" tabindex="0" aria-expanded="false">
           <div class="ach-photo-wrap">
-            <!-- ✏️ EDIT: Your Swanson Fund certificate photo — save as images/ach-swanson.jpg -->
             <img src="images/ach-swanson.jpg" alt="Swanson Memorial Fund Scholarship" onerror="this.src='';this.parentElement.style.background='linear-gradient(135deg,#1a1a6e,#2a2a9e)'" />
             <div class="ach-photo-label">
               <p class="ach-name">Swanson Memorial Fund Scholarship</p>
@@ -890,7 +860,7 @@
         <!-- Work Card 1 — QCBT -->
         <div class="work-card reveal" style="transition-delay:0.15s;" onclick="openModal('modal-qcbt')" role="button" tabindex="0" aria-haspopup="dialog">
           <div class="work-card-photo">
-            <!-- ✏️ EDIT: QCBT work photo — save as images/work-qcbt.jpg -->
+        
             <img src="images/work-qcbt.jpg" alt="Quad City Bank and Trust" style="object-position: 50% 50%; object-fit:cover;transform:scale(1.3)" onerror="this.style.display='none'" />
           </div>
           <div class="work-card-body">
@@ -904,7 +874,7 @@
         <!-- Work Card 2 — ICT -->
         <div class="work-card reveal" style="transition-delay:0.25s;" onclick="openModal('modal-ict')" role="button" tabindex="0" aria-haspopup="dialog">
           <div class="work-card-photo">
-            <!-- ✏️ EDIT: ICT club photo — save as images/work-ict.jpg -->
+
             <img src="images/work-ict.jpg" alt="Innovation Competition Team" onerror="this.style.display='none'" />
           </div>
           <div class="work-card-body">
@@ -918,7 +888,6 @@
         <!-- Work Card 3 — OISSS -->
         <div class="work-card reveal" style="transition-delay:0.35s;" onclick="openModal('modal-oisss')" role="button" tabindex="0" aria-haspopup="dialog">
           <div class="work-card-photo">
-            <!-- ✏️ EDIT: OISSS work photo — save as images/work-oisss.jpg -->
             <img src="images/work-oisss.jpg" alt="OISSS" style="object-position: 45% 50%;" onerror="this.style.display='none'" />
           </div>
           <div class="work-card-body">
@@ -942,7 +911,7 @@
   <div class="modal-overlay" id="modal-qcbt" role="dialog" aria-modal="true" aria-label="QCBT Details" onclick="closeModalOutside(event,'modal-qcbt')">
     <div class="modal-panel">
       <div class="modal-header">
-        <!-- ✏️ EDIT: QCBT modal header photo — save as images/work-qcbt-modal.jpg -->
+        
         <img src="images/work-qcbt-modal.jpg" alt="Quad City Bank and Trust" style="object-position: 50% 55%;" onerror="this.style.display='none'" />
         <div class="modal-header-overlay"></div>
         <button class="modal-close" onclick="closeModal('modal-qcbt')" aria-label="Close">✕</button>
@@ -961,12 +930,12 @@
         </ul>
         <p class="modal-gallery-label">Work Examples</p>
         <div class="modal-gallery">
-          <!-- ✏️ EDIT: Gallery photos — save as images/work-qcbt-1.jpg, -2.jpg, -3.jpg -->
+
           <div class="modal-gallery-img"><img src="images/work-qcbt-1.jpg" alt="QCBT work example 1" onerror="this.style.display='none'" /></div>
           <div class="modal-gallery-img"><img src="images/work-qcbt-2.jpg" alt="QCBT work example 2" style="object-position: 50% 40%;" onerror="this.style.display='none'" /></div>
           <div class="modal-gallery-img"><img src="images/work-qcbt-3.jpg" alt="QCBT work example 3" onerror="this.style.display='none'" /></div>
         </div>
-        <!-- ✏️ EDIT: Add campaign link if available -->
+
         <a href="https://qcbt.bank/college-student" class="modal-link">View Campaign 1 ↗</a>
         <div></div>
         <a href="https://qcbt.bank/qcbt-savings-quest" class="modal-link">View Campaign 2 ↗</a>
@@ -978,7 +947,7 @@
   <div class="modal-overlay" id="modal-ict" role="dialog" aria-modal="true" aria-label="ICT Details" onclick="closeModalOutside(event,'modal-ict')">
     <div class="modal-panel">
       <div class="modal-header">
-        <!-- ✏️ EDIT: ICT modal header photo — save as images/work-ict-modal.jpg -->
+  
         <img src="images/work-ict-modal.jpg" alt="Innovation Competition Team" style="object-position: 50% 20%;" onerror="this.style.display='none'" />
         <div class="modal-header-overlay"></div>
         <button class="modal-close" onclick="closeModal('modal-ict')" aria-label="Close">✕</button>
@@ -997,7 +966,7 @@
         </ul>
         <p class="modal-gallery-label">Work Examples</p>
         <div class="modal-gallery">
-          <!-- ✏️ EDIT: Gallery photos — save as images/work-ict-1.jpg, -2.jpg -->
+       
           <div class="modal-gallery-img"><img src="images/work-ict-1.jpg" alt="ICT work example 1" onerror="this.style.display='none'" /></div>
           <div class="modal-gallery-img"><img src="images/work-ict-2.jpg" alt="ICT work example 2" onerror="this.style.display='none'" /></div>
         </div>
@@ -1010,7 +979,7 @@
   <div class="modal-overlay" id="modal-oisss" role="dialog" aria-modal="true" aria-label="OISSS Details" onclick="closeModalOutside(event,'modal-oisss')">
     <div class="modal-panel">
       <div class="modal-header">
-        <!-- ✏️ EDIT: OISSS modal header photo — save as images/work-oisss-modal.jpg -->
+     
         <img src="images/work-oisss-modal.jpg" alt="OISSS" style="object-position: 50% 80%;" onerror="this.style.display='none'" />
         <div class="modal-header-overlay"></div>
         <button class="modal-close" onclick="closeModal('modal-oisss')" aria-label="Close">✕</button>
@@ -1029,7 +998,6 @@
         </ul>
         <p class="modal-gallery-label">Work Examples</p>
         <div class="modal-gallery">
-          <!-- ✏️ EDIT: Gallery photos — save as images/work-oisss-1.jpg, -2.jpg -->
           <div class="modal-gallery-img"><img src="images/work-oisss-1.jpg" alt="OISSS work example 1" onerror="this.style.display='none'" /></div>
           <div class="modal-gallery-img"><img src="images/work-oisss-2.jpg" alt="OISSS work example 2" style="object-position: 50% 0%;" onerror="this.style.display='none'" /></div>
         </div>
@@ -1042,7 +1010,7 @@
   <!-- =============================================
        PARALLAX DIVIDER — between Work and Projects
   ============================================= -->
-  <!-- ✏️ EDIT: Save your wide landscape photo as images/parallax.jpg -->
+
   <div class="parallax-divider" aria-hidden="true">
     <div class="parallax-overlay"></div>
   </div>
@@ -1303,17 +1271,17 @@
         <h2 class="section-title">Let's Connect</h2>
       </div>
 
-      <!-- ✏️ EDIT: Contact subtitle -->
+      
       <p class="contact-subtitle reveal" style="transition-delay:0.2s;">Open to opportunities, collaborations, and conversations.</p>
 
       <div class="contact-btns reveal" style="transition-delay:0.3s;">
-        <!-- ✏️ EDIT: Your email address -->
+    
         <a href="mailto:samyambista23@augustana.edu" class="btn btn-primary">Email Me</a>
-        <!-- ✏️ EDIT: Your LinkedIn URL -->
+       
         <a href="https://www.linkedin.com/in/samyam-bista" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
-        <!-- ✏️ EDIT: Add your GitHub URL -->
+        
         <a href="#" class="btn btn-outline">GitHub</a>
-        <!-- ✏️ EDIT: Drop resume.pdf in same folder as this index.html -->
+        
         <a href="resume.pdf" download class="btn btn-outline">Resume ↓</a>
       </div>
     </div>
